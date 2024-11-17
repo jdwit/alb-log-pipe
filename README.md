@@ -1,6 +1,6 @@
 # ALB Log Pipe
 
-Pipe your AWS Application Load Balancer access logs to anywhere!
+Process and deliver your AWS Application Load Balancer access logs anywhere!
 
 You can configure Application Load Balancers
 to [store access logs in an S3 bucket](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/enable-access-logging.html).
@@ -43,8 +43,8 @@ interested in the request URL and the response processing time. You can do this 
 
 ```
 TARGETS=cloudwatch \
-LOG_GROUP_NAME=my-log-group-name \
-LOG_STREAM_NAME=my-log-stream-name \
+CLOUDWATCH_LOG_GROUP=my-log-group-name \
+CLOUDWATCH_LOG_STREAM=my-log-stream-name \
 FIELDS=request,response_processing_time \
 ./alb-log-pipe s3://<bucket>/AWSLogs/<account-id>/elasticloadbalancing/<region>/2024/01/01/
 ```
